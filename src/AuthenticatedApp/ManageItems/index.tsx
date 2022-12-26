@@ -69,9 +69,9 @@ const ManageItems = () => {
 
     return (
     <Stack direction='column' width='100%' sx={{padding: '20px 20px'}} spacing={2}>
-        <Button variant='contained' onClick={() => setOpenAdd(true)} sx={{backgroundColor: '#15b9b7', color: 'white', width: '200px'}}>
+        {/* <Button variant='contained' onClick={() => setOpenAdd(true)} sx={{backgroundColor: '#15b9b7', color: 'white', width: '200px'}}>
             הוספת מוצר חדש למחסן
-        </Button>
+        </Button> */}
         {items.map((item, index) => (
             <CardContainer key={index} sx={{ height: '70px', cursor: 'pointer', direction: 'rtl' }} onClick={() => selectItem(item)}>
                 <Stack direction='row' sx={{ height: '100%', width: '100%' }}>
