@@ -1,4 +1,6 @@
 export interface StockItem {
+  id: string;
+  myId: string;
   name: string;
   description: string;
   demandRateForYear: number;

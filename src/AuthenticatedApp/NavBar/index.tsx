@@ -11,7 +11,7 @@ import {
   }
   
   const NavBar = ({ height }: NavBarProps) => (
-    <AppBar position='relative' sx={{ height, minWidth: '620px', direction: 'rtl' }}>
+    <AppBar position='relative' sx={{ height, minWidth: '620px'}}>
     <Toolbar>
       <Grid
         container
@@ -22,7 +22,7 @@ import {
         <Stack direction='row' flexWrap='nowrap' sx={{ width: 'auto' }}>
           <Stack direction='row'>
             {/* <img src={logo} alt='logo' height='40px' width='40px'></img> */}
-            <Typography color='#15b9b7' variant='h5' marginLeft='40px' sx={{fontWeight: '700', alignSelf: 'center'}}>
+            <Typography color='#15b9b7' variant='h5' marginRight='40px' sx={{fontWeight: '700', alignSelf: 'center'}}>
               DAMA
             </Typography>
           </Stack>
@@ -30,9 +30,9 @@ import {
             flexWrap='nowrap'
             sx={{ width: 'auto', height: '100%' }}
           >
-            <NavLink to='/'>מוצרים במחסן</NavLink>
+            <NavLink to='/inventory'>Inventory</NavLink>
             <NavLink to='/purchases-history'>היסטוריית רכישה</NavLink>
-            <NavLink to='/inventory'>מלאי</NavLink>
+            <NavLink to='/manage-items'>Items</NavLink>
           </Stack>
         </Stack>
         <Stack

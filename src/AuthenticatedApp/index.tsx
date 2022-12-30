@@ -8,7 +8,7 @@ import PurchasesHistory from './PurchasesHistory'
 const ShellRoutes = () => (
   <Routes>
     <Route path='/' element={<Shell />}>
-      <Route index element={<ManageItems />} />
+      <Route index element={<Inventory />} />
       <Route path='manage-items' element={<ManageItems />} />
       <Route path='purchases-history' element={<PurchasesHistory />} />
       <Route path='inventory' element={<Inventory />} />

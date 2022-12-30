@@ -1,9 +1,9 @@
 import { Typography } from '@mui/material';
 
 export const greetings = {
-  morningGreeting: 'בוקר טוב',
-  afternoonGreeting: 'צהריים טובים',
-  nightGreeting: 'לילה טוב'
+  morningGreeting: 'good morning',
+  afternoonGreeting: 'good afternoon',
+  nightGreeting: 'good night'
 };
 
 export const getPartOfTheDay = (hour: number) => {
@@ -22,7 +22,7 @@ export const getPartOfTheDay = (hour: number) => {
 
 const Greeting = () => (
   <Typography variant='caption'>
-    {`${getPartOfTheDay(new Date().getHours())} נגה`}
+    {`${getPartOfTheDay(new Date().getHours())} noga`}
   </Typography>
 );
 

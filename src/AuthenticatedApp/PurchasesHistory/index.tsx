@@ -86,9 +86,9 @@ const PurchasesHistory = () => {
 
     return (
     <Stack width='100%' justifyContent='center' alignItems='center'>
-        <Card sx={{height: '350px', width: '70%', direction: 'rtl'}}>
-            <TableContainer sx={{maxHeight: '350px', direction: 'rtl'}} >
-                <Table stickyHeader aria-label="sticky table" sx={{direction: 'rtl'}}>
+        <Card sx={{height: '350px', width: '70%'}}>
+            <TableContainer sx={{maxHeight: '350px' }}>
+                <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
                             <TableCell sx={{backgroundColor: theme.palette.info.main}}>שם מוצר</TableCell>
