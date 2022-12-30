@@ -91,9 +91,9 @@ const PurchasesHistory = () => {
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
-                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>שם מוצר</TableCell>
-                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>תאריך רכישה / קנייה</TableCell>
-                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>כמות</TableCell>
+                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>Name</TableCell>
+                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>Date</TableCell>
+                            <TableCell sx={{backgroundColor: theme.palette.info.main}}>Amount</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -101,7 +101,7 @@ const PurchasesHistory = () => {
                         <TableRow key={id}>
                             <TableCell>{name}</TableCell>
                             <TableCell>{date}</TableCell>
-                            <TableCell sx={{direction: 'rtl', color: amount > 0 ? 'green' : 'red'}}>{amount}</TableCell>
+                            <TableCell sx={{color: amount > 0 ? 'green' : 'red'}}>{amount}</TableCell>
                         </TableRow>)}
                     </TableBody>
                 </Table>

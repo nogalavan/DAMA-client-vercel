@@ -105,7 +105,7 @@ const ManageItems = () => {
             הוספת מוצר חדש למחסן
         </Button> */}
         {items && items.map((item, index) => (
-            <CardContainer key={index} sx={{ height: '70px', cursor: 'pointer', direction: 'rtl' }} onClick={() => selectItem(item)}>
+            <CardContainer key={index} sx={{ height: '70px', cursor: 'pointer' }} onClick={() => selectItem(item)}>
                 <Stack direction='row' sx={{ height: '100%', width: '100%' }}>
                     <DisplayItem stockItem={item}/>
                 </Stack>
