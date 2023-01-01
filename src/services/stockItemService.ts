@@ -8,8 +8,8 @@ export const updateStockItem = async (stockItem: StockItem) => {
   return response.data;;
   };
 
-export const addStockItem = async (myId: string, name: string, unitPrice: number, description: string, demandRateForYear: number, orderCost: number, deliveryTime: number, annualInterestPerItem: number, unitHoldingCost: number) => {
-  const response = await axios.post(API_URL + `post`, { myId, name, unitPrice, description, demandRateForYear, orderCost, deliveryTime, annualInterestPerItem, unitHoldingCost });
+export const addStockItem = async (myId: string, name: string, unitPrice: number, description: string, demandRateForYear: number, orderCost: number, deliveryTime: number, annualInterestPerItem: number, unitHoldingCost: number, amount: number) => {
+  const response = await axios.post(API_URL + `post`, { myId, name, unitPrice, description, demandRateForYear, orderCost, deliveryTime, annualInterestPerItem, unitHoldingCost, amount });
   return response.data;;
 };
 

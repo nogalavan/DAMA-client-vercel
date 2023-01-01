@@ -21,8 +21,8 @@ export const getPartOfTheDay = (hour: number) => {
 };
 
 const Greeting = () => (
-  <Typography variant='caption'>
-    {`${getPartOfTheDay(new Date().getHours())} noga`}
+  <Typography variant='subtitle1'>
+    {`${getPartOfTheDay(new Date().getHours())}, noga`}
   </Typography>
 );
 

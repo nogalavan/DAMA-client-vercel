@@ -1,3 +1,5 @@
+import { NumericLiteral } from "typescript";
+
 export interface StockItem {
   id: string;
   myId: string;
@@ -9,4 +11,5 @@ export interface StockItem {
   annualInterestPerItem: number;
   unitHoldingCost: number;
   deliveryTime: number;
+  amount: number;
 }

@@ -31,7 +31,7 @@ import {
             sx={{ width: 'auto', height: '100%' }}
           >
             <NavLink to='/inventory'>Inventory</NavLink>
-            <NavLink to='/purchases-history'>היסטוריית רכישה</NavLink>
+            <NavLink to='/purchases-history'>Transactions</NavLink>
             <NavLink to='/manage-items'>Items</NavLink>
           </Stack>
         </Stack>

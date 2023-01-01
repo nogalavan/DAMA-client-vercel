@@ -1,88 +1,101 @@
 import { Card, Typography, Stack, Table, TableContainer, TableHead, TableCell, TableRow, TableBody, useTheme } from "@mui/material";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-// interface PurchaesItem {
-//     name: string;
-//     date: string;
-//     amount: number;
-// }
+interface PurchaesItem {
+    id: string;
+    itemName: string;
+    date: string;
+    amount: number;
+}
 
-export const purchaesItems = [
-    {
-        id: 1,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: -30
-    },
-    {
-        id: 2,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 3,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 4,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 5,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: -30
-    },
-    {
-        id: 6,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 7,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 8,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 9,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: -30
-    },
-    {
-        id: 10,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: -30
-    },
-    {
-        id: 11,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-    {
-        id: 12,
-        name: 'deveops',
-        date: new Date().toLocaleDateString(),
-        amount: 30
-    },
-];
+// export const purchaesItems = [
+//     {
+//         id: 1,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: -30
+//     },
+//     {
+//         id: 2,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 3,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 4,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 5,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: -30
+//     },
+//     {
+//         id: 6,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 7,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 8,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 9,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: -30
+//     },
+//     {
+//         id: 10,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: -30
+//     },
+//     {
+//         id: 11,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+//     {
+//         id: 12,
+//         name: 'deveops',
+//         date: new Date().toLocaleDateString(),
+//         amount: 30
+//     },
+// ];
 
 const PurchasesHistory = () => { 
     const theme = useTheme();
+    const [transactions, setTransactions] = useState<PurchaesItem[]>();
+
+    useEffect(() => {
+        // GET request using axios inside useEffect React hook
+        axios.get('https://dama-server-vercel.vercel.app/api/purchasesHistory/getAll')
+            .then(response => {setTransactions(response.data);
+            });
+            
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
 
     return (
     <Stack width='100%' justifyContent='center' alignItems='center'>
@@ -97,9 +110,9 @@ const PurchasesHistory = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {purchaesItems.map(({id, name, amount, date}) => 
-                        <TableRow key={id}>
-                            <TableCell>{name}</TableCell>
+                        {transactions && transactions.map(({id, itemName, amount, date}, index) => 
+                        <TableRow key={index}>
+                            <TableCell>{itemName}</TableCell>
                             <TableCell>{date}</TableCell>
                             <TableCell sx={{color: amount > 0 ? 'green' : 'red'}}>{amount}</TableCell>
                         </TableRow>)}
