@@ -53,13 +53,13 @@ const Inventory = () => {
     const [items, setItems] = useState<StockItem[]>();
 
     const getItems = () => {
-      // axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
-      //     .then(response => {setItems(response.data)
-      //     });
-      
-      axios.get('http://localhost:5000/api/stockItem/getAll')
+      axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
           .then(response => {setItems(response.data)
           });
+      
+      // axios.get('http://localhost:5000/api/stockItem/getAll')
+      //     .then(response => {setItems(response.data)
+      //     });
     }
 
     useEffect(() => {
@@ -82,6 +82,8 @@ const Inventory = () => {
 
     updateStockItem({...selectedItem!, amount: selectedItem!.amount + additionalAmount})
     .then(x => getItems());
+
+    addTransaction(selectedItem!.name, new Date().toLocaleString(), additionalAmount);
   }
 
   

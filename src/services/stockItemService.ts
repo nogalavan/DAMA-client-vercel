@@ -1,8 +1,8 @@
 import axios from "axios";
 import { StockItem } from "../types/StockItem";
 
-// const API_URL = "https://dama-server-vercel.vercel.app/api/stockItem/";
-const API_URL = "http://localhost:5000/api/stockItem/";
+const API_URL = "https://dama-server-vercel.vercel.app/api/stockItem/";
+// const API_URL = "http://localhost:5000/api/stockItem/";
 
 export const updateStockItem = async (stockItem: StockItem) => {
     const response = await axios.put(API_URL + `update/${stockItem._id}`, { ...stockItem });

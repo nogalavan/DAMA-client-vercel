@@ -10,13 +10,13 @@ const Dashboard = () => {
 
     useEffect(() => {
         // GET request using axios inside useEffect React hook
-        // axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
-        //     .then(response => {setItems(response.data); console.log(response);
-        //     });
-
-            axios.get('http://localhost:5000/api/stockItem/getAll')
-            .then(response => {setItems(response.data)
+        axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
+            .then(response => {setItems(response.data); console.log(response);
             });
+
+            // axios.get('http://localhost:5000/api/stockItem/getAll')
+            // .then(response => {setItems(response.data)
+            // });
     
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);

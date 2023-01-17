@@ -73,6 +73,10 @@ const ManageItems = () => {
         axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
             .then(response => {setItems(response.data); console.log(response);
             });
+
+            // axios.get('http://localhost:5000/api/stockItem/getAll')
+            // .then(response => {setItems(response.data)
+            // });
     
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
@@ -91,14 +95,14 @@ const ManageItems = () => {
 
     const handleCloseEdit = () => {
         setOpenEdit(false);
-        // addTransaction('mouse', new Date().toLocaleDateString(), 20);
-        // addTransaction('key board', new Date().toLocaleDateString(), 30);
-        // addTransaction('charger', new Date().toLocaleDateString(), 40);
-        // addTransaction('mouse', new Date().toLocaleDateString(), -15);
-        // addTransaction('key board', new Date().toLocaleDateString(), -20);
-        // addTransaction('charger', new Date().toLocaleDateString(), -7);
-        // addTransaction('key board', new Date().toLocaleDateString(), -30);
-        // addTransaction('key board', new Date().toLocaleDateString(), 72);
+        // addTransaction('mouse', new Date().toLocaleString(), 20);
+        // addTransaction('key board', new Date().toLocaleString(), 30);
+        // addTransaction('charger', new Date().toLocaleString(), 40);
+        // addTransaction('mouse', new Date().toLocaleString(), -15);
+        // addTransaction('key board', new Date().toLocaleString(), -20);
+        // addTransaction('charger', new Date().toLocaleString(), -7);
+        // addTransaction('key board', new Date().toLocaleString(), -30);
+        // addTransaction('key board', new Date().toLocaleString(), 72);
         // addStockItem('item-Eathernet','eathernet', 10,'eathernet cable', 500,  6, 6,  0.2, 1.9);
         // addStockItem('item-Computer_screen','computer screen', 10,'regular computer screen', 800,  5, 7,  0.2, 1.9, 25);
         // addStockItem('item-Hard_disk','hard disk', 12,'regular hard disk', 1200,  6, 9,  0.2, 2.3, 50);

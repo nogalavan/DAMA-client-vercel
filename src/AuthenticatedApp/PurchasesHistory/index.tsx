@@ -1,6 +1,7 @@
 import { Card, Typography, Stack, Table, TableContainer, TableHead, TableCell, TableRow, TableBody, useTheme } from "@mui/material";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {orderBy} from 'lodash';
 
 interface PurchaesItem {
     id: string;
@@ -110,7 +111,7 @@ const PurchasesHistory = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {transactions && transactions.map(({id, itemName, amount, date}, index) => 
+                        {transactions && orderBy(transactions, ["date"], ["desc"]).map(({id, itemName, amount, date}, index) => 
                         <TableRow key={index}>
                             <TableCell>{itemName}</TableCell>
                             <TableCell>{date}</TableCell>
