@@ -4,11 +4,13 @@ import NotFound from '../components/NotFound';
 import Inventory from './Inventory';
 import ManageItems from './ManageItems'
 import PurchasesHistory from './PurchasesHistory'
+import Dashboard from './Dashboard';
 
 const ShellRoutes = () => (
   <Routes>
     <Route path='/' element={<Shell />}>
-      <Route index element={<Inventory />} />
+      <Route index element={<Dashboard />} />
+      <Route path='dashboard' element={<Dashboard />} />
       <Route path='manage-items' element={<ManageItems />} />
       <Route path='purchases-history' element={<PurchasesHistory />} />
       <Route path='inventory' element={<Inventory />} />

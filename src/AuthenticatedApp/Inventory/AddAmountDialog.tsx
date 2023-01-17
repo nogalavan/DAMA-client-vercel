@@ -1,5 +1,16 @@
-import { Button, Dialog, Stack, TextField, Typography } from "@mui/material";
+import { Button, Dialog, makeStyles, Stack, TextField, Typography } from "@mui/material";
+import styled from "@mui/system/styled";
 import { useState } from "react";
+
+export const StyledButton = styled(Button)`
+  background-color: #15b9b7;
+  color: white;
+  width: 200px;
+  &:hover {
+    background-color: #15b9b7;
+    color: white;
+  }
+`;
 
 export interface SimpleDialogProps {
     open: boolean;
@@ -24,9 +35,9 @@ const AddAmountDialog = ({open, onClose} : SimpleDialogProps) => {
             How much would you like to add?
         </Typography>
         <TextField type='number' value={amount} onChange={(e) => setAmount(Number(e.target.value))}></TextField>
-        <Button variant='contained' onClick={() => save()} sx={{backgroundColor: '#15b9b7', color: 'white', width: '200px'}}>
-                הוספת מוצר חדש למחסן
-            </Button>
+        <StyledButton variant='contained' onClick={() => save()}>
+                Add
+            </StyledButton>
         </Stack>
     </Dialog>)
 }

@@ -1,10 +1,11 @@
 import axios from "axios";
 import { StockItem } from "../types/StockItem";
 
-const API_URL = "https://dama-server-vercel.vercel.app/api/stockItem/";
+// const API_URL = "https://dama-server-vercel.vercel.app/api/stockItem/";
+const API_URL = "http://localhost:5000/api/stockItem/";
 
 export const updateStockItem = async (stockItem: StockItem) => {
-    const response = await axios.put(API_URL + `update/${stockItem.id}`, { stockItem });
+    const response = await axios.put(API_URL + `update/${stockItem._id}`, { ...stockItem });
   return response.data;;
   };
 
@@ -13,11 +14,11 @@ export const addStockItem = async (myId: string, name: string, unitPrice: number
   return response.data;;
 };
 
-export const getAll = async () => {
-  axios.get(API_URL + `getAll`).then((res) => {return res.data}).catch((err) => {
-    console.error('Error:', err);
-});
-};
+// export const getAll = async () => {
+//   axios.get(API_URL + `getAll`).then((res) => {return res.data}).catch((err) => {
+//     console.error('Error:', err);
+// });
+// };
 
 
 // export const addTransaction = (amount: Number, date: String, discription: String, catagory: String, type: String, userId: String) => {

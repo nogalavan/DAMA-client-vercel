@@ -7,28 +7,28 @@ interface AddItemDialogProps {
 
 const AddItemDialog = ({open, handleClose}: AddItemDialogProps) => { 
     return (<Dialog open={open} onClose={handleClose}>
-        <DialogTitle>הוספת מוצר</DialogTitle>
+        <DialogTitle>Add item</DialogTitle>
         <DialogContent>
           <Stack spacing={2}>
-            <TextField label="שם מוצר" fullWidth sx={{mt: '5px'}}/>
-            <TextField label="תיאור" fullWidth/>
+          <TextField label="name" fullWidth sx={{mt: '5px'}}/>
+            <TextField label="Description" fullWidth/>
             <Stack direction='row' spacing={1}>
-                <TextField label="עלות הזמנה" />
-                <TextField label="קצב ביקוש לשנה" />
+                <TextField label="Order cost" />
+                <TextField label="Demand rate for year" />
             </Stack>
             <Stack direction='row' spacing={1}>
-                <TextField label="מחיר יחידה" />
-                <TextField label="ריבית שנתית לפריט" />
+                <TextField label="Unit price" />
+                <TextField label="Annual interest per item" />
             </Stack>
             <Stack direction='row' spacing={1}>
-                <TextField label="עלות החזקה ליחידה"/>
-                <TextField label="זמן אספקה (ימים)" />
+                <TextField label="Unit holding cost" />
+                <TextField label="Delivery time (days)" />
             </Stack>
           </Stack>
         </DialogContent>
         <DialogActions>
         <Button variant='contained' sx={{backgroundColor: '#15b9b7', color: 'white'}}>
-        שמירה
+        save
           </Button>
         </DialogActions>
       </Dialog>)

@@ -1,7 +1,7 @@
 import { NumericLiteral } from "typescript";
 
 export interface StockItem {
-  id: string;
+  _id: string;
   myId: string;
   name: string;
   description: string;
