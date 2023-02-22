@@ -8,8 +8,8 @@ import DashboardItem from "./DashboardItem";
 const Dashboard = () => { 
     const [items, setItems] = useState<StockItem[]>();
 
-    const displayHello = () => axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
-    .then(response => setItems(response.data));
+    // const displayHello = () => axios.get('https://dama-server-vercel.vercel.app/api/stockItem/getAll')
+    // .then(response => setItems(response.data));
 
     useEffect(() => {
         // GET request using axios inside useEffect React hook
@@ -23,7 +23,7 @@ const Dashboard = () => {
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
     }, []);
 
-    setInterval(displayHello, 5000);
+    // setInterval(displayHello, 5000);
 
     return (
     <Stack direction='column' width='100%' sx={{padding: '20px 20px'}} spacing={2}>
